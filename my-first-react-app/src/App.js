@@ -4,6 +4,8 @@ import './App.css';
 import React, { Component } from 'react';
 import MyComponent from './components/MyComponent';
 import CountUp from './components/CountUp';
+import NavBar from './components/NavBar';
+import Forum from './components/Forum';
 
 export class App extends Component {
 	constructor(props) {
@@ -11,6 +13,7 @@ export class App extends Component {
 		this.onClickBtn = this.onClickBtn.bind(this);
 		this.state = {
 			count: 0,
+			username: 'David',
 		};
 		this.countUp = this.countUp.bind(this);
 	}
@@ -37,6 +40,8 @@ export class App extends Component {
 					count={this.state.count}
 					onButtonClicked={this.countUp}
 				/>
+				<NavBar username={this.state.username} />
+				<Forum username={this.state.username} />
 			</div>
 		);
 	}
